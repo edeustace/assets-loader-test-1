@@ -1,0 +1,313 @@
+@import "lessreset";
+@import "lesshat";
+@import "scrollbar";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext,cyrillic-ext);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,cyrillic-ext,latin-ext);
+
+@fontSize: 14px;
+@fontFamily: 'PT Sans';
+@koszykWidth: 700px;
+@koszykHeight: 200px;
+
+.ui-pnotify-history-container .ui-pnotify-history-pulldown {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#wrap, html, body {
+  font-family: @fontFamily;
+  font-size: @fontSize;
+  background-color: #e7e7e7;
+}
+
+.btn {
+  .transition(background-color 0.15s linear);
+}
+
+@tableBorderRadius: 5px;
+.data-table {
+  border-collapse: separate;
+  .box-shadow(~"0 0 0 1px #d5d5d5");
+  /*border-radius: @tableBorderRadius;*/
+}
+
+.data-table thead tr th {
+  text-shadow: 0 1px 0px #fff;
+  font-size: 13px;
+  line-height: 13px;
+  border-bottom: 2px solid #DDD;
+}
+
+.data-table thead {
+  background-color: #F8F8F8;
+}
+
+.data-table th {
+  text-align: center;
+  font-weight: bold;
+}
+.data-table th[ng-click] {
+  cursor: pointer;
+}
+.data-table th div {
+  position: relative;
+}
+.data-table th i {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.preload * {
+  .transition(~"none !important");
+}
+
+#koszyk {
+  position: fixed;
+  top: 0px;
+  left: -@koszykWidth;
+  z-index: 2000;
+  .transition(all 0.5s ease);
+  height: 100%;
+}
+
+#koszyk.opened {
+  left: 0;
+}
+
+#koszyk-content {
+  width: @koszykWidth;
+  _height: @koszykHeight;
+//  min-height: 42px;
+//  max-height: 300px;
+  height: 100%;
+  overflow: auto;
+  float: left;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+//  border-bottom-right-radius: 4px;
+  padding: 8px 12px;
+}
+
+#koszyk table td {
+  vertical-align: middle;
+  border-color: white;
+}
+
+#koszyk-btn {
+  margin-top: 50px;
+  float: left;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  padding-right: 4px;
+  opacity: 0.7;
+}
+
+#koszyk-btn.opened {
+  opacity: 1.0;
+}
+
+#koszyk-btn:hover {
+  opacity: 1.0;
+}
+
+.koszyk-quantity {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 3px 6px;
+  color: #5cb85c;
+  margin-left: 5px;
+}
+
+.table {
+  margin-bottom: 0px;
+  font-size: 12px;
+}
+
+.table > thead > tr > th[data-column] {
+  cursor: pointer;
+}
+
+#koszyk table thead > tr > th {
+  border-bottom: 1px solid white;
+}
+
+#koszyk table thead {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.data-table tbody > tr > td {
+  vertical-align: middle;
+}
+
+.notVisible {
+  visibility: hidden;
+}
+
+.tooltip-inner {
+  white-space: nowrap;
+}
+
+#loading-bar {
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  margin-left: -100px;
+  margin-top: -20px;
+  height: 40px;
+  .box-shadow(~"0 0 0 1px rgba(255,255,255,0.15), 0 0 20px 0 #227BC3");
+  display: none;
+}
+
+#loading-bar.show {
+  display: block !important;
+}
+
+.progress-bar {
+  width: 100%;
+  border-radius: 5px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.tableFloatingHeaderOriginal {
+  opacity: 0.9;
+  top: 50px !important;
+}
+
+table input {
+  padding: 2px 6px !important;
+}
+
+table td > input {
+  float: left !important;
+  width: 70% !important;
+  height: 25px !important;
+  margin-right: 5px !important;
+}
+
+table td > div {
+  width: 24% !important;
+  height: 25px !important;
+  padding: 0px !important;
+}
+
+form label {
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.animate-show {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  opacity: 1;
+}
+
+.animate-show.ng-hide-add,
+.animate-show.ng-hide-remove {
+  display: block !important;
+}
+
+.animate-show.ng-hide {
+  line-height: 0;
+  opacity: 0;
+  padding: 0 10px;
+}
+
+.alert-error {
+  background: #ff9e95;
+}
+
+.repeat-animation.ng-enter,
+.repeat-animation.ng-leave,
+.repeat-animation.ng-move {
+  -webkit-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+  position: relative;
+}
+
+.repeat-animation.ng-enter {
+  opacity: 0;
+}
+
+.repeat-animation.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.repeat-animation.ng-leave {
+  opacity: 1;
+}
+
+.repeat-animation.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+.repeat-animation.ng-move {
+  opacity: 0.5;
+}
+
+.repeat-animation.ng-move.ng-move-active {
+  opacity: 1;
+}
+
+.animate-hide {
+  .transition(all 0.5s);
+  opacity: 0;
+  height: 0px !important;
+}
+
+.animate-width {
+  width: 450px;
+}
+
+.green {
+  font-size: 18px;
+  color: #5CB85C;
+  //text-shadow: -1px 0px #3e913e, 1px 0px #3e913e, 0px -1px #3e913e, 0px 1px #3e913e;
+}
+
+.red {
+  font-size: 18px;
+  color: #D9534F;
+  //text-shadow: -1px 0px #BB2B26, 1px 0px #BB2B26, 0px -1px #BB2B26, 0px 1px #BB2B26;
+}
+
+#searchText {
+  .transition(all 0.25s);
+}
+
+#loading-wrap {
+  border: none;
+  background-color: #000;
+  opacity: 0.0;
+  position: absolute;
+  .transition(opacity 0.15s);
+}
+
+#loading-wrap.show {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  opacity: 0.6;
+}
+
+#loading-wrap.show.loading {
+  z-index: 1020;
+}
+
+#loading-wrap.show.koszyk {
+  z-index: 1035;
+}
+
+#loading-indicator {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 99999;
+}

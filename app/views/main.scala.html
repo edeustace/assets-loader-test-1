@@ -1,0 +1,13 @@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@title</title>
+        @views.Helper.loader.scripts("js")("javascripts/test.js")
+    </head>
+    <body>
+        @content
+    </body>
+</html>
